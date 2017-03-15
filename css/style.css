@@ -1,0 +1,20 @@
+.upload-img {  
+    width: 80px;
+    display: inline !important;
+}
+.upload-div { 
+    background-color: orange;
+    width: 190px;
+    font-weight: normal;
+    color: blue;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.Brand-image {
+    padding: 5px;
+    width: 80px;
+    position: relative;
+    top: -12px;
+}
