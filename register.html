@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>      
+        <link rel=stylesheet type="text/css" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+        <link rel=stylesheet type="text/css" href="/css/styles.css">
+		<style>
+		table, th, td {
+			border: 1px solid cyan;
+		}
+		</style>
+		<script src="js/jquery.js"></script>
+    </head>
+    <body>
+        <div class="container">
+<form id="RegisterF" method="POST" action="/register" onsubmit="return vRF(this)">
+    E-mail address: <input type="email" name="email" onblur="vE(this)"><br>
+    First Name: <input type="text" name="name" onblur="vN(this)"><br>
+    College: <select name='cid'>
+				<option value='0' selected disabled>Select College</option>
+				<option value=0>All</option>
+<option value=31>Indian Institute of Technology, Delhi</option>
+<option value=33>Indian Institute of Technology, Guwahati</option>
+<option value=12>Birla Institute of Technology and Science, Pilani</option>
+<option value=78>National Institute of Technology, Jaipur</option>
+<option value=18>Delhi Technological University, New Delhi</option>
+			</select><br>
+    Password: <input type="password" name="pwd"><br>
+    Retype Password: <input type="password" name="rpwd" onblur="vPM()"><br>
+    Gender:<input type="radio" name="sex" value="0">M <input type="radio" name="sex" value="1">F<br>
+</form>
+<button type="submit" form="RegisterF" name="submit">Register</button>
+<ul id="msg"></span>
+
+     </div>
+    </body>
+<script src='js/functions.js'></script></html>
+
