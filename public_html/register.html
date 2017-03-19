@@ -3,27 +3,31 @@
 <html>
     <head>
         <title>Register</title>      
-        <link rel=stylesheet type="text/css" href="/css/styles.css">
+        <link rel=stylesheet type="text/css" href="/css/style.css">
 		<style>
 		table, th, td {
 			border: 1px solid cyan;
 		}
 		</style>
-		<script src="js/jquery.js"></script>
+		<script src="/js/jquery.js"></script>
     </head>
     <body>
         <div class="container">
-<form id="RegisterF" method="POST" action="/register" onsubmit="return vRF(this)">
+<form id="RegisterF" method="POST" action="../models/register.php" onsubmit="return vRF(this)">
     E-mail address: <input type="email" name="email" onblur="vE(this)"><br>
     First Name: <input type="text" name="name" onblur="vN(this)"><br>
     College: <select name='cid'>
 				<option value='0' selected disabled>Select College</option>
-				<option value=0>All</option>
-<option value=31>Indian Institute of Technology, Delhi</option>
-<option value=33>Indian Institute of Technology, Guwahati</option>
-<option value=12>Birla Institute of Technology and Science, Pilani</option>
-<option value=78>National Institute of Technology, Jaipur</option>
-<option value=18>Delhi Technological University, New Delhi</option>
+<option value=2>MNIT, JAIPUR</option>
+<option value=3>NIT JALANDHAR</option>
+<option value=4>IIT BOMBAY</option>
+<option value=5>IIT DELHI</option>
+<option value=6>IIT KHARAGPUR</option>
+<option value=7>IIT KANPUR</option>
+<option value=8>IIT MADRAS</option>
+<option value=9>IIT GUWAHATI</option>
+<option value=10>IIT ROORKEE</option>
+<option value=11>IIT (BHU) VARANASI</option>
 			</select><br>
     Password: <input type="password" name="pwd"><br>
     Retype Password: <input type="password" name="rpwd" onblur="vPM()"><br>
@@ -34,7 +38,7 @@
 
      </div>
     </body>
-<script src='js/functions.js'>
+<script src='/js/functions.js'>
     
 </script>
 </html>
