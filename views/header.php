@@ -26,8 +26,12 @@
             <div id="top">
                 <div>
                     <p style="text-align:right; margin-right:50px;">
-                        <a href="/store.php">Go to Store</a>&nbsp;&nbsp;
-                        <?php if (!empty($_SESSION["id"])): ?>
+                         <?php if (empty($_SESSION["id"])): ?>
+                            <a href="../public_html/login_form.html">Go back to Login</a>&nbsp;&nbsp;
+                            <a href="../public_html/register.html">Go back to Register</a>&nbsp;&nbsp;
+                            
+                        <?php endif ?>
+                       <?php if (!empty($_SESSION["id"])): ?>
                             <a href="../public_html/postad.html">Want to sell item</a>&nbsp;&nbsp;
                             <a href="/password.php">  Change Password</a>
                             <a href="../models/logout.php">Logout</a>
