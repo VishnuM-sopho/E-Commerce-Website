@@ -18,9 +18,6 @@
     position: relative;
     top: -12px;
 }
-
-
-
 .form-style-8{
     font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
@@ -46,7 +43,10 @@
 .form-style-8 input[type="date"],
 .form-style-8 input[type="datetime"],
 .form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
 .form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
 .form-style-8 input[type="password"],
 .form-style-8 textarea,
 .form-style-8 select 
@@ -70,7 +70,7 @@
     overflow: hidden;
 }
 .form-style-8 input[type="button"], 
-.form-style-8 input[type="submit"]{
+.form-style-8 button[type="submit"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -81,12 +81,12 @@
     color: #FFFFFF;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
-    padding: 8px 18px;
+    padding: 8px 25px;
     text-decoration: none;
     text-transform: uppercase;
 }
 .form-style-8 input[type="button"]:hover, 
-.form-style-8 input[type="submit"]:hover {
+.form-style-8 button[type="submit"]:hover {
     background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
     background-color:#34CACA;
 }
@@ -99,7 +99,7 @@
 
 
 
-
+/*css for the dropdown*/
 
 select#soflow, select#soflow-color {
    -webkit-appearance: button;
@@ -122,15 +122,8 @@ select#soflow, select#soflow-color {
    width: 300px;
 }
 
-select#soflow-color {
-   color: #fff;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
-   background-color: #779126;
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   padding-left: 15px;
-}
+
+
 
 
 table, th, td {

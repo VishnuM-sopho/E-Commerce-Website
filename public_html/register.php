@@ -48,8 +48,6 @@
         if ($_POST["pwd"]!=$_POST["rpwd"])
         {
             apologize("Confirm password must match with the password.");
-        
-            $_SESSION["id"]=NULL;
         }
         
         extract($_POST);
