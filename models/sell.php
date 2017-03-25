@@ -47,7 +47,7 @@
         {
             apologize("Contact Info. must be atleast 4 characters in length.");
         }
-        else if(!preg_match("/\d*\.+\d*/",$_POST["price"]))
+        else if(!preg_match("/\d*\.?\d*/",$_POST["price"]))
         {
             apologize("Enter valid price.");
         }
@@ -88,6 +88,9 @@
                 apologize("There was an error uploading your file.");
         }
         extract($_POST);
+        $date=date("d.m.Y");
+        $date = strtotime($date);
+        $date= date('j F , Y', $date);
 $query="Select college_id from users where id=$id";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
@@ -96,13 +99,13 @@ $query="Select first_name from users where id=$id";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
 $user_name=$row["first_name"];
-$query="insert ignore into store values ('$target_file','$title',$price,$college_id,$category,0,'$user_name',$id)";
+$query="insert ignore into store values ('$target_file','$title',$price,$college_id,$category,'$date','$user_name',$id)";
 if(!mysqli_query($conn,$query))
 echo("Error description: " . mysqli_error($conn));
 $query="insert into item_desc values('$title','$desc','$contact')";
 if(!mysqli_query($conn,$query))
 echo("Error description: " . mysqli_error($conn));
-header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
+//header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
 
     }
 
