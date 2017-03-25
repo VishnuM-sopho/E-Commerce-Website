@@ -99,9 +99,9 @@ $user_name=$row["first_name"];
 $query="insert ignore into store values ('$target_file','$title',$price,$college_id,$category,0,'$user_name',$id)";
 if(!mysqli_query($conn,$query))
 echo("Error description: " . mysqli_error($conn));
-else
-$row=mysqli_fetch_assoc($result);
-print_r($row);
+$query="insert into item_desc values('$title','$desc','$contact')";
+if(!mysqli_query($conn,$query))
+echo("Error description: " . mysqli_error($conn));
 header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
 
     }
