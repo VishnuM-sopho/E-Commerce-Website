@@ -79,7 +79,7 @@ $query="Select first_name from users where id=$id";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
 $user_name=$row["first_name"];
-$query="insert into store values ('$target_file','$title',$price,$college_id,$category,0,'$user_name',$id)";
+$query="insert ignore into store values ('$target_file','$title',$price,$college_id,$category,0,'$user_name',$id)";
 if(!mysqli_query($conn,$query))
 echo("Error description: " . mysqli_error($conn));
 else

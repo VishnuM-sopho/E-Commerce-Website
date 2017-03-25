@@ -1,6 +1,8 @@
 <?php
-
-    $query="Select * from store where seller_id = \"$id\" ";
+ require("../controllers/config.php"); 
+ render
+ $sid=$_GET['id'];
+    $query="Select * from store where seller_id = \"$sid\" ";
     $result=mysqli_query($conn,$query);
     if(!$result)
     print(mysqli_error($conn));
@@ -13,6 +15,6 @@
     
     
     
-    
+   
 
 ?>

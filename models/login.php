@@ -30,10 +30,11 @@
         $rows=mysqli_fetch_assoc($result);
         // compare hash of user's input against hash that's in database
             if (password_verify($_POST["password"], $rows["hash"]))
-            {
+            {   
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $rows["id"];
-                render("../public_html/portfolio.php",["id" => $_SESSION["id"]]);
+                
+                header('Location: ../public_html/portfolio.php?id='.$_SESSION["id"]);
             }
             
         // else apologize
