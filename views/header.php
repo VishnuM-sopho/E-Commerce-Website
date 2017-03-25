@@ -41,7 +41,7 @@
                 </div>
                 
                 <?php if (!empty($_SESSION["id"])): ?>
-                    <h4>Welcome, <a href="/"><?= $user_name ?></a></h4>
+                    <h4>Welcome, <?= $user_name ?></h4>
                 <?php endif ?>
                 
                 <?php if (!empty($_SESSION["id"]) && (basename($_SERVER["SCRIPT_FILENAME"]) == "index.php" || basename($_SERVER["SCRIPT_FILENAME"]) == "store.php")): ?>

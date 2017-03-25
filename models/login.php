@@ -2,16 +2,16 @@
 
     // configuration
     require("../controllers/config.php"); 
-    logout();
+    
     // if user reached page via GET (as by clicking a link or via redirect)
-    if ($_SERVER["REQUEST_METHOD"] == "GET")
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && empty($_SESSION["id"]))
     {   
         // else render form
         redirect("../public_html/login_form.html");
     }
 
     // else if user reached page via POST (as by submitting a form via POST)
-    else if ($_SERVER["REQUEST_METHOD"] == "POST")
+    else if ($_SERVER["REQUEST_METHOD"] == "POST" || !empty($_SESSION["id"]))
     {    
         // validate submission
         if (empty($_POST["email"]))
