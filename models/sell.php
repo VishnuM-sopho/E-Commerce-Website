@@ -1,5 +1,5 @@
 <?php
-
+    
     // configuration
     require("../controllers/config.php");
 
@@ -12,7 +12,7 @@
 
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {          
+    {    $_SESSION['id']=$_GET['id'];      
         // validate submission
         if (empty($_POST["title"]))
         {
@@ -71,24 +71,7 @@
                 apologize("There was an error uploading your file.");
         }
         
-        $query="SELECT college_id from users where id=$seller_id";
-        $result=mysqli_query($conn,$query);
-        print(mysqli_error($conn));
-        $row=mysqli_fetch_assoc($result);
-        print_r($row);
-        $name=$_SESSION["name"];
-        print($name);
-        $category_id = $_POST["category"];
-        print($category_id);
-                extract($_POST);
-        //insering information
-//$query= "insert into store values ('$target_file','$title',$price,$college_id,$category_id,,'$name','$seller_id')";       
-       /* $result = mysqli_query($conn, $query);
         
-        if($result === false)
-            apologize("Can not insert");
-        
-        redirect("/");*/
     }
 
 ?>

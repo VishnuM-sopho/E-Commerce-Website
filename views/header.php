@@ -32,7 +32,7 @@
                             
                         <?php endif ?>
                        <?php if (!empty($_SESSION["id"])): ?>
-                            <a href="../public_html/postad.html">Want to sell item</a>&nbsp;&nbsp;
+                            <a href="../public_html/postad.php?id=<?php echo $_SESSION['id'];?>">Want to sell item</a>&nbsp;&nbsp;
                             <a href="/password.php">  Change Password</a>
                             <a href="../models/logout.php">Logout</a>
                         <?php endif ?>
