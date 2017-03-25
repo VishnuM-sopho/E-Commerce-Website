@@ -12,7 +12,8 @@
 
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {    $id=$_GET['id'];      
+    {    $id=$_GET['id'];  
+        $_SESSION["id"]=$id;    
         // validate submission
         if (empty($_POST["title"]))
         {
@@ -85,7 +86,7 @@ echo("Error description: " . mysqli_error($conn));
 else
 $row=mysqli_fetch_assoc($result);
 print_r($row);
-
+header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
 
     }
 
