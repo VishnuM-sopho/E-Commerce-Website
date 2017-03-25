@@ -1,5 +1,4 @@
 <?php
-    
     $query="Select * from store where seller_id = \"$id\" ";
     $result=mysqli_query($conn,$query);
     if(!$result)

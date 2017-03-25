@@ -34,7 +34,7 @@
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $rows["id"];
                 
-                header('Location: ../public_html/portfolio.php?id='.$_SESSION["id"]);
+                header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
             }
             
         // else apologize
