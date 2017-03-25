@@ -1,6 +1,8 @@
 
 
 <?php
+    if($change)
+        print("<h3>Your Password has been changed Successfully.</h3>");
     $query="Select * from store where seller_id = \"$id\" ";
     $result=mysqli_query($conn,$query);
     if(!$result)

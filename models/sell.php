@@ -106,7 +106,7 @@ echo("Error description: " . mysqli_error($conn));
 $query="insert into item_desc values('$title','$desc','$contact')";
 if(!mysqli_query($conn,$query))
 echo("Error description: " . mysqli_error($conn));
-header('Location: ../public_html/display.php?id='.$_SESSION["id"]);
+header('Location: ../public_html/display.php?id='.$_SESSION["id"]."&change=0");
 
     }
 
