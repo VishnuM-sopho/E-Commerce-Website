@@ -21,7 +21,6 @@ echo("<th>Price</th>");
 echo("<th>College</th>");
 echo("<th>Category</th>");
 echo("<th>Date</th>");
-echo("<th>Contact Seller</th>");
 echo("</tr>");
 $id=$_SESSION["id"];
 $query="SELECT * from store where seller_id=$id";
@@ -48,7 +47,6 @@ while($rows=mysqli_fetch_assoc($result))
     print("<td>" . $r["college_name"] . "</td>");                                            
     print("<td>" . $rr["category"] . "</td>");
     print("<td>".$rows["date"]."</td>");
-    print("<td><a href=\"\">"."Contact Seller"."</a>");
     print("</tr>");
 }
 
