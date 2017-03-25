@@ -10,7 +10,7 @@
         print("<h3>You have not put anything on sale</h3><br>");
     else
     {
-
+    print("<h2>Your items on Sale</h2>");
 echo("<table id=\"store\">");
 echo("<tr>");
 echo("<th>Image</th>");
@@ -27,7 +27,8 @@ $result=mysqli_query($conn, $query);
 while($rows=mysqli_fetch_assoc($result))
  {   
 	print("<tr>");
-    print("<td>".$rows["image"]."</td>");
+	$image="<img src=\"".$rows["image"]."\">";
+    print("<td>".$image."</td>");
     print("<td>" . $rows["title"] . "</td>");
     $title=$rows["title"];
     $query="select college_id,category_id from store where title='$title' and seller_id=$id";
