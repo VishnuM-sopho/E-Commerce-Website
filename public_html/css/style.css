@@ -129,3 +129,36 @@ select#soflow, select#soflow-color {
 table, th, td {
 			border: 1px solid cyan;
 		}
+		
+		
+		
+#store {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#store td, #store th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+    
+}
+#store td{
+    font-weight:bold;
+    font-size:15px;
+}
+
+
+#store tr:nth-child(even){background-color: #f2f2f2;}
+
+#store tr:hover {background-color: #ddd;}
+
+#store th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size:20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align:center;
+}

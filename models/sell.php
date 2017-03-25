@@ -35,6 +35,10 @@
         {
             apologize("You must select a category.");
         }
+        else if(!preg_match("/.{4,}/",$_POST["title"]))
+        {
+            apologize("Title must contain atleast 4 characters.");
+        }
         //getting file name
         $target_dir = "../public_html/uploads/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
