@@ -5,7 +5,7 @@
     logout();
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
-    {
+    {   
         // else render form
         render("../public_html/login_form.html", ["title" => "Log In"]);
     }
@@ -33,7 +33,7 @@
             {
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $rows["id"];
-                render("../public_html/portfolio.php",["email" => $_POST["email"]]);
+                render("../public_html/portfolio.php",["id" => $_SESSION["id"]]);
             }
             
         // else apologize

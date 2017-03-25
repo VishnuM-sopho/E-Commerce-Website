@@ -12,7 +12,7 @@
 
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
+    {   
         // validate submission
         if (empty($_POST["title"]))
         {
@@ -30,10 +30,15 @@
         {
             apologize("You must give price of your item.");
         }
+        else if (empty($_POST["category"]))
+        {
+            apologize("You must select a category.");
+        }
+        print_r($_POST);
         
         
-        //getting file name
-        $target_dir = "../public_html/images/";
+       /* //getting file name
+        $target_dir = "../public_html/uploads/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         
@@ -53,22 +58,11 @@
         }
         
         //checking size of uploaded file
-        if ($_FILES["item_image"]["size"] > 1000000)
+        if ($_FILES["image"]["size"] > 5000000)
         {
-            apologize("Your file is too large(>1MB).");
+            apologize("Your file is too large(>5MB).");
             $uploadOk = 0;
         }
-        
-        //checking extension of file
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) 
-        {
-            apologize("Only JPG, JPEG, PNG & GIF files are allowed.</br>");
-            $uploadOk = 0;
-        }
-        
-        //checking if file already exist
-        if (file_exists($target_file)) 
-            $target_file = $target_dir . str_replace('.'.$imageFileType, "", $_FILES["item_image"]["name"]) . '_' . $_SESSION["id"] . '.'. $imageFileType;
         
         //checking if there was an error
         if ($uploadOk == 0) 
@@ -81,13 +75,7 @@
         
         
         
-        $selected_key = $_POST["category"];
-        $selected_category = $category[$selected_key];
-        
-        if($_POST["choice"] == "1")
-            $choice = 'donate';
-        else
-            $choice = 'sell';
+        $category_id = $_POST["category"];
         
         $query = sprintf("SELECT college FROM users WHERE id = '%s'",$_SESSION["id"]);
         $result = mysqli_query($link, $query);
@@ -100,7 +88,7 @@
         if($result === false)
             apologize("Can not insert");
         
-        redirect("/");
+        redirect("/");*/
     }
 
 ?>

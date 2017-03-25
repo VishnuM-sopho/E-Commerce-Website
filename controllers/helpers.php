@@ -69,7 +69,11 @@
         {
             if(!empty($_SESSION["id"]))
             {
-                    $conn = mysqli_connect("localhost", "jharvard","crimson","olx")or die ("could not connect to mysql");;
+                    $conn = mysqli_connect("localhost", "jharvard","crimson","olx");
+                    if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
                     $query = sprintf("SELECT first_name FROM users WHERE id = '%s'", $_SESSION["id"]);
                 $user = mysqli_query($conn, $query);
                 $rows = mysqli_fetch_array($user);
