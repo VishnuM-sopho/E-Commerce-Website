@@ -34,7 +34,7 @@
                        <?php if (!empty($_SESSION["id"])): ?>
                             <a href="../public_html/postad.php?id=<?php echo $_SESSION['id'];?>">Want to sell item</a>&nbsp;&nbsp;
                             <a href="../public_html/password_form.php">  Change Password</a>
-                            <a href="../views/store.php">Go To Store</a>
+                            <a href="../public_html/store.php">Go To Store</a>
                             <a href="../models/logout.php">Logout</a>
                         <?php endif ?>
                     </p>
