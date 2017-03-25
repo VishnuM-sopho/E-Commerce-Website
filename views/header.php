@@ -4,7 +4,7 @@
 
     <head>
 
-        <link href="../public_html/css/styles.css" rel="stylesheet"/>
+        <link href="../public_html/css/style.css" rel="stylesheet"/>
 
         <?php if (isset($title)): ?>
             <title><?= htmlspecialchars($title) ?></title>

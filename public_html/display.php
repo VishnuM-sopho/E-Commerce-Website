@@ -1,3 +1,5 @@
+
+
 <?php
 require("../controllers/config.php"); 
     $_SESSION["id"]=$_GET['id'];
