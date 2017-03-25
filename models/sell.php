@@ -75,10 +75,10 @@
         
         
         
-        $category_id = $_POST["category"];
+        $c_id = $_POST["category"];
         
-        $query = sprintf("SELECT college FROM users WHERE id = '%s'",$_SESSION["id"]);
-        $result = mysqli_query($link, $query);
+        $query = "SELECT college_name FROM colleges WHERE college_id = $c_id";
+        $result = mysqli_query($conn, $query);
         $college = mysqli_fetch_array($result)["college"];
         
         //insering information
