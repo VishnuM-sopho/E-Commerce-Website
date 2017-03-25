@@ -38,7 +38,6 @@
         $target_dir = "../public_html/uploads/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
-        
         //file extension
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         if(empty($_FILES["image"]["tmp_name"]))
@@ -76,18 +75,15 @@
         
         $c_id = $_POST["category"];
         
-        $query = "SELECT college_name FROM colleges WHERE college_id = $c_id";
-        $result = mysqli_query($conn, $query);
-        $college = mysqli_fetch_assoc($result);
-        print_r($college);
         //insering information
-        $query = sprintf("INSERT INTO items (path,title,price,college,category,description,contact,choice,seller_id) VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s')", $target_file, $_POST["title"], $_POST["price"], $college, $selected_category ,$_POST["description"], $_POST["contact"], $choice, $_SESSION["id"]);
-        $result = mysqli_query($conn, $query);
+        
+        
+       /* $result = mysqli_query($conn, $query);
         
         if($result === false)
             apologize("Can not insert");
         
-        redirect("/");
+        redirect("/");*/
     }
 
 ?>
