@@ -8,6 +8,7 @@
 require("../controllers/config.php");
 if(isset($_GET["id"]))
 {
+    echo("<a href=\"../public_html/store.php\">Return To Main Store</a>");
     $id=$_GET["id"];
  $query="select * from store where seller_id=$id";
 }
@@ -22,8 +23,8 @@ $query="Select * from store";
     if(count($rows)==0)
         print("<h3>Store is Empty.Please comeback Later.</h3><br>");
     else
-    {
-    print("<h2>Items on Sale</h2>");
+    {$l=mysqli_num_rows($res);
+    print("<h2>".$l." Items on Sale</h2>");
 echo("<table id=\"store\">");
 echo("<tr>");
 echo("<th>Image</th>");
