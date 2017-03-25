@@ -6,7 +6,14 @@
 </html>
 <?php
 require("../controllers/config.php");
+if(isset($_GET["id"]))
+{
+    $id=$_GET["id"];
+ $query="select * from store where seller_id=$id";
+}
+else
 $query="Select * from store";
+
     $result=mysqli_query($conn,$query);
     if(!$result)
     print(mysqli_error($conn));
