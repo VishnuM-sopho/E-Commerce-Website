@@ -39,6 +39,18 @@
         {
             apologize("Title must contain atleast 4 characters.");
         }
+        else if(!preg_match("/.{4,200}/",$_POST["desc"]))
+        {
+            apologize("Description must be between 4 and 200 characters.");
+        }
+        else if(!preg_match("/.{4,}/",$_POST["contact"]))
+        {
+            apologize("Contact Info. must be atleast 4 characters in length.");
+        }
+        else if(!preg_match("/\d*\.+\d*/",$_POST["price"]))
+        {
+            apologize("Enter valid price.");
+        }
         //getting file name
         $target_dir = "../public_html/uploads/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
