@@ -23,16 +23,27 @@ echo("<th>Contact Seller</th>");
 echo("</tr>");
 $id=$_SESSION["id"];
 $query="SELECT * from store where seller_id=$id";
-
 $result=mysqli_query($conn, $query);
 while($rows=mysqli_fetch_assoc($result))
  {   
 	print("<tr>");
     print("<td>".$rows["image"]."</td>");
     print("<td>" . $rows["title"] . "</td>");
+    $title=$rows["title"];
+    $query="select college_id,category_id from store where title='$title' and seller_id=$id";
+    $res=mysqli_query($conn,$query);
+    $row=mysqli_fetch_assoc($res);
+    $college_id=$row["college_id"];
+    $category_id=$row["category_id"];
+    $query="select college_name from colleges where college_id=$college_id";
+    $res=mysqli_query($conn,$query);
+    $r=mysqli_fetch_assoc($res);
+    $query="select category from categories where category_id=$category_id";
+    $res=mysqli_query($conn,$query);
+    $rr=mysqli_fetch_assoc($res);
     print("<td>" . $rows["price"] . "</td>");
-    print("<td>" . $rows["college_id"] . "</td>");                                            
-    print("<td>" . $rows["category_id"] . "</td>");
+    print("<td>" . $r["college_name"] . "</td>");                                            
+    print("<td>" . $rr["category"] . "</td>");
     print("<td>".$rows["date"]."</td>");
     print("<td><a href=\"\">"."Contact Seller"."</a>");
     print("</tr>");
