@@ -7,7 +7,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {   
         // else render form
-        render("../public_html/login_form.html", ["title" => "Log In"]);
+        redirect("../public_html/login_form.html");
     }
 
     // else if user reached page via POST (as by submitting a form via POST)

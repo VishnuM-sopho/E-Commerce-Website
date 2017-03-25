@@ -1,5 +1,8 @@
 <html>
 <head><link href="../public_html/css/style.css" rel="stylesheet"/></head>
+<body>
+<a href="../models/login.php">Sell Item</a>
+</body>
 </html>
 <?php
 require("../controllers/config.php");
