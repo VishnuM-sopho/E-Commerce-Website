@@ -10,7 +10,7 @@
     date_default_timezone_set("Asia/Kolkata");
     
     //connecting to database
-    $conn = mysqli_connect("localhost", "vishnum1998","zrrJ8zNEdpuTwuty","olx")or die ("could not connect to mysql");;
+    $conn = mysqli_connect("localhost", "jharvard","crimson","olx")or die ("could not connect to mysql");;
     
     $colleges = array('Select College','All','MNIT Jaipur','NIT Jalandhar',"IIT Bombay","IIT Delhi","IIT Kharagpur","IIT Kanpur","IIT Madras","IIT Guwahati","IIT Roorkee","IIT (BHU) Varanasi");
     $category = array('Select Category', 'All', 'Books', 'Clothing', 'Electronics', 'Furniture', 'Sports', 'Vehicle', 'Others');
