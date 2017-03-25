@@ -50,7 +50,7 @@ while($rows=mysqli_fetch_assoc($result))
     print("<td>" . $r["college_name"] . "</td>");                                            
     print("<td>" . $rr["category"] . "</td>");
     print("<td>".$rows["date"]."</td>");
-    print("<td><a href=\"\">"."Contact Seller"."</a></td>");
+    print("<td><a href=\"/public_html/seller.php?id="."$id"."\">"."Contact Seller"."</a></td>");
     print("</tr>");
 }
 
