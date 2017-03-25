@@ -74,10 +74,9 @@
         
         
         $c_id = $_POST["category"];
-        
+                extract($_POST);
         //insering information
-        
-        
+$query="insert into store values ('$target_file',)";       
        /* $result = mysqli_query($conn, $query);
         
         if($result === false)
