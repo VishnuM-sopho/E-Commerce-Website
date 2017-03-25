@@ -70,7 +70,7 @@
             if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file))
                 apologize("There was an error uploading your file.");
         }
-        
+        extract($_POST);
         
     }
 

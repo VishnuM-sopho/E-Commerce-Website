@@ -1,6 +1,5 @@
 <?php
 $_SESSION['id']=$_GET['id'];
-print($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html>
