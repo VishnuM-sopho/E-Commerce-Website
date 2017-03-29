@@ -1,3 +1,4 @@
+<?php require("../views/title.php"); ?>
 <?php
 
     // configuration
@@ -7,11 +8,20 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET" && empty($_SESSION["id"]))
     {   
         // else render form
-        redirect("../public_html/login_form.html");
+        redirect("../public_html/login_form.php");
     }
-
+    else if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_SESSION["id"]))
+    {   
+        // else render form
+        redirect("../public_html/postad.php?id=".$_SESSION["id"]);
+    }
+    else if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_SESSION["id"]))
+    {   
+        // else render form
+        redirect("../public_html/login_form.php");
+    }
     // else if user reached page via POST (as by submitting a form via POST)
-    else if ($_SERVER["REQUEST_METHOD"] == "POST" || !empty($_SESSION["id"]))
+    else if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_SESSION["id"]))
     {    
         // validate submission
         if (empty($_POST["email"]))

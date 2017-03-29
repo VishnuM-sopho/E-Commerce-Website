@@ -12,7 +12,10 @@ if(isset($_POST["cid"]) && isset($_GET["id"]))
  echo("<a href=\"../public_html/store.php\">Return To Main Store</a>");
     $id=$_SESSION["id"];
  extract($_POST);
+    if($cid!=1)
     $query="select * from store where seller_id=$id and college_id=$cid";
+    else if($cid==1)
+        $query="select * from store where seller_id=$id";
   }
 else if(isset($_GET["id"]) && !isset($_POST["cid"]))
 {
@@ -22,16 +25,30 @@ else if(isset($_GET["id"]) && !isset($_POST["cid"]))
 }
 else if(!isset($_GET["id"]) && isset($_POST["cid"]))
 {extract($_POST);
- $query="select * from store where college_id=$cid";
+    if($cid!=1)
+    $query="select * from store where college_id=$cid";
+    else if($cid==1)
+        $query="select * from store";
 }
 else
 $query="Select * from store";
 
+if(!isset($_POST["cid"]))
+    print("<h1>Showing Results for All</h1>");
+    else{
+$id=$_POST['cid'];
+$query2="Select college_name from colleges where college_id=$id";
+$r=mysqli_query($conn,$query2);
+$res=mysqli_fetch_assoc($r);
+$res=$res["college_name"];
+print("<h1>Showing Results for $res</h1>");
+}
     $result=mysqli_query($conn,$query);
     if(!$result)
     print(mysqli_error($conn));
     $res=mysqli_query($conn,$query);
     $rows=mysqli_fetch_assoc($res);
+ 
     
 ?>
 <?php
@@ -40,7 +57,7 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php\">")
 else
 echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\"".$_GET["id"].">");
 ?>
-<select name='cid'>
+<select name='cid' id="s1">
 				<option value='0' disabled placeholder="College">College</option>
 <option value=1>All</option>
 <option value=2>MNIT, JAIPUR</option>
@@ -54,7 +71,7 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 <option value=10>IIT ROORKEE</option>
 <option value=11>IIT (BHU) VARANASI</option>
 			</select><br>
-			<button type="submit" form="search" name="submit" value="Register">Submit</button>
+			<button type="submit" id="b1" form="search" name="submit" value="Register">Submit</button>
 </form>
 
 <?php

@@ -1,3 +1,4 @@
+<?php require("../views/title.php"); ?>
 <?php
 require("../controllers/config.php");
 $_SESSION["id"]=$_GET["id"];
