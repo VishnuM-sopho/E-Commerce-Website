@@ -1,3 +1,7 @@
+body {
+    background-color: linen;
+}
+
 .upload-img {  
     width: 80px;
     display: inline !important;
@@ -162,4 +166,17 @@ table, th, td {
     background-color: #4CAF50;
     color: white;
     text-align:center;
+}
+
+#d1 {
+    margin: -5px;
+    height: 100px;
+    width: 100%;
+}
+
+#i1{
+    height: 200px;
+    width: 500px;
+    display: block;
+    margin: 0 auto;
 }

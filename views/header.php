@@ -20,15 +20,15 @@
     </head>
 
     <body>
-
+    <div id="d1"><img id="i1" src="../public_html/images/logo.png"</div>
         <div class="container">
 
             <div id="top">
                 <div>
                     <p style="text-align:right; margin-right:50px;">
                          <?php if (empty($_SESSION["id"])): ?>
-                            <a href="../public_html/login_form.html">Go back to Login</a>&nbsp;&nbsp;
-                            <a href="../public_html/register.html">Go back to Register</a>&nbsp;&nbsp;
+                            <a href="../public_html/login_form.php">Go back to Login</a>&nbsp;&nbsp;
+                            <a href="../public_html/register_form.php">Go back to Register</a>&nbsp;&nbsp;
                             
                         <?php endif ?>
                        <?php if (!empty($_SESSION["id"])): ?>

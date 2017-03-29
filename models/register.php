@@ -43,7 +43,9 @@
         {
             apologize("You must select a gender.");
         }
-        
+        $rex="/\w+@[a-z]+\.[a-z]+\.*[a-z]*/";
+        if(!preg_match($rex,$_POST["email"]))
+          apologize("Invalid email address");
         //if passwords do not match
         if ($_POST["pwd"]!=$_POST["rpwd"])
         {
@@ -62,6 +64,10 @@
         $email=mysqli_real_escape_string($conn,$email);
         $password=mysqli_real_escape_string($conn,$password);
         $id=mt_rand(10,100);
+        $query="Select first_name from users where email='$email'";
+        $result=mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)!=0)
+            apologize("User already registered");
         //query to insert the details of new user in users table
        $result="INSERT IGNORE INTO users (id,first_name,email,password,hash,college_id,gender) VALUES($id,'$name','$email','$pwd','$password','$cid','$gender')";
         mysqli_query($conn, $result);
@@ -69,7 +75,7 @@
             $result = mysqli_query($conn, $query);
             $rows=mysqli_fetch_assoc($result);
             $_SESSION["id"]=$rows["id"];
-            redirect("../public_html/portfolio.php");
+            //redirect("../public_html/portfolio.php");
     }
 
 

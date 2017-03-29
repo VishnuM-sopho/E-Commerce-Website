@@ -1,3 +1,4 @@
+<?php require("../views/title.php"); ?>
 <html>
 <head><link href="../public_html/css/style.css" rel="stylesheet"/></head>
 <body>

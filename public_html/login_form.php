@@ -1,4 +1,4 @@
-
+<?php require("../views/title.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -164,7 +164,7 @@ table, th, td {
 	<span id='msg'></span>
 </form>
 <button form="LoginF" type="submit" name="submit">Log In</button>
-<span>or <a href="register.html">Register</a></span>
+<span>or <a href="register_form.php">Register</a></span>
 </div>
 <script type='text/javascript'>
 	$("input[name=email]").focus();

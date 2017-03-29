@@ -1,4 +1,4 @@
-
+    <?php require("../public/views/title.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,9 +61,8 @@ li a:hover {
         <div class="container">
 
 <ul>
-    <h2>Project 2</h2><br><br>
-	<li><a href="login_form.html">Click to Sign In</a></li>
-	<li><a href="store.php">Go to store</a></li>
+	<li><a href="/public_html/login_form.php">Click to Sign In</a></li>
+	<li><a href="/public_html/store.php">Go to store</a></li>
 </ul>
 
      </div>

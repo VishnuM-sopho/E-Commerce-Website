@@ -23,6 +23,10 @@
             apologize("You must provide your password.");
         }
         else{
+        
+        $rex="/\w+@[a-z]+\.[a-z]+\.*[a-z]*/";
+        if(!preg_match($rex,$_POST["email"]))
+            apologize("Invalid email address");
         // query database for user
         $email=$_POST["email"];
         $rows = "SELECT * FROM users WHERE email ='$email'";
@@ -38,7 +42,7 @@
             }
             
         // else apologize
-        apologize("Invalid username and/or password.");
+        apologize("Invalid E-mail address and/or password.");
        }
     }
        

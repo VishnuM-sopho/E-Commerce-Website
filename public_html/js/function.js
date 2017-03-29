@@ -17,3 +17,6 @@ function vRF(e) {
     var n;
     return $("#msg").html(""), n = !0, vE(e.email) || ($("#msg").append("<li>Invalid Email</li>"), n = !1), vN(e.name) || ($("#msg").append("<li>Invalid Name</li>"), n = !1), vPM() || ($("#msg").append("<li>Password does not match</li>"), n = !1), (e.pwd.value.length < 6 || e.pwd.value.length > 30) && ($("#msg").append("<li>Password must contain 6 to 30 characters</li>"), n = !1), "0" === e.cid.value && ($("#msg").append("<li>No College selected</li>"), n = !1), e.sex.value || ($("#msg").append("<li>No Gender selected</li>"), n = !1), n
 }
+$(document).ready(function() {
+
+});

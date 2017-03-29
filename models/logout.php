@@ -7,6 +7,6 @@
     logout();
 
     // redirect user
-    redirect("../public_html/index.html");
+    redirect("../index.php");
 
 ?>

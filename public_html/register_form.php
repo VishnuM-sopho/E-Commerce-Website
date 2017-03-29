@@ -1,4 +1,4 @@
-
+<?php require("../views/title.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -192,22 +192,7 @@ table, th, td {
   </form>
 </div>
      
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-    </body>
+</body>
 <script src='/js/functions.js'>
     
 </script>
