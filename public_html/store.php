@@ -2,7 +2,44 @@
 <html>
 <head><link href="../public_html/css/style.css" rel="stylesheet"/></head>
 <body>
-<a href="../models/login.php">Sell Item</a>
+            <style>
+         @import url(http://fonts.googleapis.com/css?family=Raleway);
+
+nav {
+   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	margin-top: 40px;
+  padding: 20px;
+  
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#nav-1 {
+  background: #5175C0;
+  opacity : 0.85;
+}
+
+.link-1 {
+  transition: 0.3s ease;
+  background: #5175C0;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  border-top: 4px solid #5175C0;
+  border-bottom: 4px solid #5175C0;
+  padding: 16px 0;
+  margin: 0 20px;
+}
+.link-1:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
+}
+
+        </style>
+        
+     <nav id="nav-1">
+<a class="link-1" href="../models/login.php">Sell Item</a>
+</nav>
 </body>
 </html>
 <?php
