@@ -1,4 +1,6 @@
-<?php require("../views/title.php"); ?>
+
+<?php  require("../controllers/config.php");
+require("../views/header.php"); ?>
 <form action="../models/password.php" method="post">
     <fieldset>
         <div class="form-group">
