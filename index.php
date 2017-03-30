@@ -1,4 +1,4 @@
-    <?php require("../public/views/title.php"); ?>
+    <?php require("views/title.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
