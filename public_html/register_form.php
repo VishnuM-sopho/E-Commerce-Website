@@ -188,7 +188,7 @@ table, th, td {
    <input type="radio" name="sex" value="0">M 
    <input type="radio" name="sex" value="1">F<br><br>
 <button type="submit" form="RegisterF" name="submit" value="Register">Register</button>
-<ul id="msg">
+<ul id="msg"></ul>
   </form>
 </div>
      

@@ -13,6 +13,7 @@ $_SESSION['id']=$_GET['id'];
 		}
 		</style>
 		<script src="js/jquery.js"></script>
+		<script src='js/functions.js'></script>
     </head>
     <body>
         <div class="container">
@@ -40,7 +41,5 @@ $_SESSION['id']=$_GET['id'];
 </ul>
      </div>
     </body>
-<script src='js/functions.js'>
-    
-</script>
+
 </html>

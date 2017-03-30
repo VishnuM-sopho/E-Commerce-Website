@@ -1,4 +1,3 @@
-<?php require("../views/title.php"); ?>
 
 <?php
     if($change)

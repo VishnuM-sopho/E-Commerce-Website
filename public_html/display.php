@@ -1,4 +1,3 @@
-<?php require("../views/title.php"); ?>
 
 <?php
 require("../controllers/config.php"); 
