@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Len-Den</title>
+    <title>Olx Clone</title>
     <link rel=stylesheet type="text/css" href="../public_html/css/style.css">
     <script src="../public_html/js/jquery.js"></script>
     <script src="../public_html/js/function.js"></script>

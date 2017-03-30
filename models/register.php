@@ -1,4 +1,4 @@
-<?php require("../views/title.php"); ?>
+
 <?php
     // configuration
     require("../controllers/config.php");
@@ -76,7 +76,7 @@
             $result = mysqli_query($conn, $query);
             $rows=mysqli_fetch_assoc($result);
             $_SESSION["id"]=$rows["id"];
-            //redirect("../public_html/portfolio.php");
+            redirect("../public_html/portfolio.php");
     }
 
 

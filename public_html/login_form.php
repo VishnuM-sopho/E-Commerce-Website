@@ -158,7 +158,7 @@ table, th, td {
    <h2>
    Login Form
    </h2>
-<form id="LoginF" method="POST" action="../models/login.php" onsubmit="return vE(this.email)">
+<form id="LoginF" method="POST" action="../models/login.php">
      <input type="text" placeholder="E-mail address"name="email" onblur="vE(this)"><br>
     <input type="password" placeholder="Password "name="password"><br>
 	<span id='msg'></span>

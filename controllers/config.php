@@ -10,7 +10,7 @@
     date_default_timezone_set("Asia/Kolkata");
     
     //connecting to database
-    $conn = mysqli_connect("localhost", "jharvard","crimson","olx");
+    $conn = mysqli_connect("localhost", "vishnum1998","zrrJ8zNEdpuTwuty","olx");
     if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }   
