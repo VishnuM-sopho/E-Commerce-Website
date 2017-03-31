@@ -57,7 +57,7 @@ nav {
 }
 
 h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 80px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
-h4 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+h4 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; opacity : 0.85;}
 
 p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
         </style>
