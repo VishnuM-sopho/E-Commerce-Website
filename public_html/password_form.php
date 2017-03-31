@@ -2,6 +2,8 @@
 <?php  require("../controllers/config.php");
 $user_name=$_GET["name"];
 require("../views/header.php"); ?>
+
+
 <style>
     
     body
@@ -21,9 +23,10 @@ button {
   position:absolute;
   background:#fff;
   height:380px;
-  width:300px;
+  width:350px;
   top:60%;
   left:50%;
+  bottom:30%;
   margin-left:-150px;
  
   box-shadow: 0px 30px 150px;
@@ -36,10 +39,10 @@ button {
 }
 #header
 {
-  background-color:#F26B6B;
+  background-color:#5175C0;
   font-family: 'Francois One', sans-serif;
   height:75px;
-  width:300px;
+  width:350px;
   position:absolute;
   top:0;
   color:white;
@@ -51,10 +54,10 @@ button {
 }
 #footer.incorrect
 {
-  background-color:#F26B6B;
+  background-color:#5175C0;
   font-family: 'Francois One', sans-serif;
   height:75px;
-  width:300px;
+  width:350px;
   position:absolute;
   bottom:0;
   color:white;
@@ -69,7 +72,7 @@ button {
   background-color:#84F075;
   font-family: 'Francois One', sans-serif;
   height:75px;
-  width:300px;
+  width:350px;
   position:absolute;
   bottom:0;
   color:white;
@@ -84,7 +87,7 @@ button {
 {
   height:100px;
   position:absolute;
-  top:50%;
+  top:40%;
   margin-top:-50px;
   width:75%;
   left:50%;
@@ -92,7 +95,7 @@ button {
 }
 input
 {
-  width:215px;
+  width:90%;
   margin:0;
   border:0;
   border-left:1px solid;
