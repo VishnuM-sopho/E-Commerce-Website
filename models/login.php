@@ -2,7 +2,6 @@
 
     // configuration
     require("../controllers/config.php"); 
-    
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET" && empty($_SESSION["id"]))
     {   
@@ -12,11 +11,13 @@
     else if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_SESSION["id"]))
     {   
         // else render form
-        redirect("../public_html/postad.php?id=".$_SESSION["id"]);
+        redirect("../public_html/display.php?id=".$_SESSION["id"]."&change=0");
     }
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {    
+    {   
+        if(isset($_SESSION["id"])) 
+        header('Location: ../public_html/display.php?id='.$_SESSION["id"]."&change=0");
         // validate submission
         if (empty($_POST["email"]))
         {   

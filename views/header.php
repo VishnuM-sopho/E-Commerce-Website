@@ -1,4 +1,5 @@
-<?php require("../views/title.php"); ?>
+<?php 
+require("../views/title.php"); ?>
 <!DOCTYPE html>
 
 <html>
@@ -69,6 +70,7 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                            <nav id="nav-1">
                                 <a class="link-1" href="../public_html/login_form.php">Go back to Login</a>&nbsp;&nbsp;
                             <a class="link-1" href="../public_html/register_form.php">Go back to Register</a>&nbsp;&nbsp;
+                            <a class="link-1" href="../public_html/register_form.php">Sell Item</a>&nbsp;&nbsp;
                             </nav>
                         <?php endif ?>
                         
@@ -76,7 +78,14 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                            <nav id="nav-1">
                                 <a class="link-1" href="../public_html/postad.php?id=<?php echo $_SESSION['id'];?>">Sell item</a>&nbsp;&nbsp;
                             <a class="link-1" href="../public_html/password_form.php?name=<?php echo $user_name?>">  Change Password</a>
-                            <a class="link-1" href="../public_html/store.php">Store</a>
+                            <?php
+                                $rex="/.*store\.php.*/";
+                                if(!preg_match($rex,$_SERVER['REQUEST_URI']))
+                                echo("<a class=\"link-1\" href=\"../public_html/store.php\">Store</a>");
+                                else
+                                echo("<a class=\"link-1\" href=\"../models/login.php\">Dashbord</a>");
+                            ?>
+
                             <a class="link-1" href="../models/logout.php">Logout</a>
                                                     </nav>
                         <?php endif ?>
@@ -87,29 +96,7 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                     <h4>Hey, <?= $user_name ?> :)</h4>
                 <?php endif ?>
                 
-                <?php if (!empty($_SESSION["id"]) && (basename($_SERVER["SCRIPT_FILENAME"]) == "index.php" || basename($_SERVER["SCRIPT_FILENAME"]) == "store.php")): ?>
                 
-                <nav class="navbar navbar-inverse">
-                    <ul class="nav navbar-nav">
-                        <?php
-                            if(basename($_SERVER["SCRIPT_FILENAME"]) == "index.php")
-                                $current = "";
-                            else
-                                $current = basename($_SERVER["SCRIPT_FILENAME"]);
-                            
-                            printf('<li><a href="/%s">%s</a></li>', $current, $category[1]);
-                            for($i=2; $i<sizeof($category); $i++)
-                                printf('<li><a href="/%s?category=%d">%s</a></li>', $current, $i, $category[$i]);
-                        ?>
-                        <li><a href="/logout.php"><strong>Log Out</strong></a></li>
-                    </ul>
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account&nbsp;&nbsp; </a></li>
-                    </ul>
-                </nav>
-                
-                <?php endif ?>
             </div>
 
             <div id="middle">

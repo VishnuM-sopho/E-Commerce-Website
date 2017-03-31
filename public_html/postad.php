@@ -1,5 +1,7 @@
 <?php require("../views/title.php"); ?>
 <?php
+if(!isset($_GET["id"]))
+    redirect("/login_form.php");
 $_SESSION['id']=$_GET['id'];
 ?>
 <!DOCTYPE html>

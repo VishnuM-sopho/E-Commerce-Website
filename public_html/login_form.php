@@ -1,4 +1,8 @@
-<?php require("../views/title.php"); ?>
+<?php require("../views/title.php");
+    require("../controllers/config.php"); 
+    if(isset($_SESSION["id"])) 
+        header('Location: ../public_html/display.php?id='.$_SESSION["id"]."&change=0");
+ ?>
 <!DOCTYPE html>
 <html>
     <head>

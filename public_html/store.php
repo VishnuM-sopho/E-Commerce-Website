@@ -1,4 +1,9 @@
-<?php require("../views/title.php"); ?>
+<?php 
+require("../controllers/config.php");
+render("null.php");
+
+
+?>
 <html>
 <head><link href="../public_html/css/style.css" rel="stylesheet"/></head>
 <body>
@@ -37,13 +42,11 @@ nav {
 
         </style>
         
-     <nav id="nav-1">
-<a class="link-1" href="../models/login.php">Sell Item</a>
-</nav>
+     
 </body>
 </html>
 <?php
-require("../controllers/config.php");
+print_r($_POST);
 if(isset($_POST["cid"]) && isset($_GET["id"]))
  {  
  echo("<a href=\"../public_html/store.php\">Return To Main Store</a>");
@@ -71,7 +74,7 @@ else
 $query="Select * from store";
 
 if(!isset($_POST["cid"]))
-    print("<h1>Showing Results for All</h1>");
+    print("<h3>Showing Results for All</h3>");
     else{
 $id=$_POST['cid'];
 $query2="Select college_name from colleges where college_id=$id";
@@ -96,7 +99,7 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 ?>
 <select name='cid' id="s1">
 				<option value='0' disabled placeholder="College">College</option>
-<option value=1>All</option>
+<option value=1>All Colleges</option>
 <option value=2>MNIT, JAIPUR</option>
 <option value=3>NIT JALANDHAR</option>
 <option value=4>IIT BOMBAY</option>
@@ -108,6 +111,16 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 <option value=10>IIT ROORKEE</option>
 <option value=11>IIT (BHU) VARANASI</option>
 			</select><br>
+<select name="catid" id="s2">
+        <option value="0" selected>All Categories</option>
+        <option value="1">Books</option>
+        <option value="2">Clothing</option>
+        <option value="3">Electronics</option>
+        <option value="4">Furniture</option>
+        <option value="5">Sports</option>
+        <option value="6">Vehicle</option>
+        <option value="7">Others</option>
+    </select><br>
 			<button type="submit" id="b1" form="search" name="submit" value="Register">Submit</button>
 </form>
 
