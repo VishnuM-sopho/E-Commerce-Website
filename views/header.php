@@ -75,7 +75,7 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                        <?php if (!empty($_SESSION["id"])): ?>
                            <nav id="nav-1">
                                 <a class="link-1" href="../public_html/postad.php?id=<?php echo $_SESSION['id'];?>">Sell item</a>&nbsp;&nbsp;
-                            <a class="link-1" href="../public_html/password_form.php">  Change Password</a>
+                            <a class="link-1" href="../public_html/password_form.php?name=<?php echo $user_name?>">  Change Password</a>
                             <a class="link-1" href="../public_html/store.php">Store</a>
                             <a class="link-1" href="../models/logout.php">Logout</a>
                                                     </nav>

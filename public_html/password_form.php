@@ -1,5 +1,6 @@
 
 <?php  require("../controllers/config.php");
+$user_name=$_GET["name"];
 require("../views/header.php"); ?>
 <form action="../models/password.php" method="post">
     <fieldset>
