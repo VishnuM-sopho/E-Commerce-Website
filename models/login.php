@@ -37,8 +37,6 @@
         $rows = "SELECT * FROM users WHERE email ='$email'";
         $result=mysqli_query($conn,$rows);
         $rows=mysqli_fetch_assoc($result);
-        if(mysqli_num_rows($result)!=0)
-            apologize("User already registered",1);
         // compare hash of user's input against hash that's in database
             if (password_verify($_POST["password"], $rows["hash"]))
             {   

@@ -57,9 +57,9 @@ nav {
 }
 
 h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 80px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
-h4 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;color:white;opacity :0.9; }
+h4 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 
-p{ color: white; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px ; padding-top: 20px; }
+p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
         </style>
        <div class="container">
 
@@ -68,16 +68,29 @@ p{ color: white; font-size: 29px; font-family: "Libre Baskerville", serif; line-
                    
                          <?php if (empty($_SESSION["id"])): ?>
                            <nav id="nav-1">
-                                <a class="link-1" href="../public_html/login_form.php">Go back to Login</a>&nbsp;&nbsp;
-                            <a class="link-1" href="../public_html/register_form.php">Go back to Register</a>&nbsp;&nbsp;
-                            <a class="link-1" href="../public_html/register_form.php">Sell Item</a>&nbsp;&nbsp;
+                                <a class="link-1" href="../public_html/login_form.php">Login</a>&nbsp;&nbsp;
+                            <a class="link-1" href="../public_html/register_form.php">Register</a>&nbsp;&nbsp;
+                            <a class="link-1" href="../models/login.php">Sell Item</a>&nbsp;&nbsp;
                             </nav>
                         <?php endif ?>
                         
                        <?php if (!empty($_SESSION["id"])): ?>
                            <nav id="nav-1">
-                                <a class="link-1" href="../public_html/postad.php?id=<?php echo $_SESSION['id'];?>">Sell item</a>&nbsp;&nbsp;
-                            <a class="link-1" href="../public_html/password_form.php?name=<?php echo $user_name?>">  Change Password</a>
+                           <?php
+                           $rex="/.*postad\.php.*/";
+                           if(!preg_match($rex,$_SERVER['REQUEST_URI']))
+           { echo("<a class=\"link-1\" href=\"../public_html/postad.php?id=");echo($_SESSION['id']);echo("\">Sell item</a>&nbsp;&nbsp");}
+                           else
+                           echo("<a class=\"link-1\" href=\"../models/login.php\">Dashboard</a>&nbsp;&nbsp");
+                           ?>
+                            <?php
+                            $rex="/.*password\_form\.php.*/";
+                            if(!preg_match($rex,$_SERVER['REQUEST_URI']))
+       {  echo("<a class=\"link-1\" href=\"../public_html/password_form.php?name=");echo($user_name);echo("\">Change Password</a>");}
+                            else
+                            echo("<a class=\"link-1\" href=\"../models/login.php\">Dashboard</a>&nbsp;&nbsp");
+                            ?>
+                            
                             <?php
                                 $rex="/.*store\.php.*/";
                                 if(!preg_match($rex,$_SERVER['REQUEST_URI']))

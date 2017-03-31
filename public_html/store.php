@@ -46,13 +46,74 @@ nav {
 </body>
 </html>
 <?php
-print_r($_SESSION);
+if(isset($_POST["cid"]))
+    extract($_POST);
+
+if(isset($_SESSION["id"]) && isset($_POST["cid"]))
+{   
+    $id=$_SESSION["id"];
+    $query="select * from store where seller_id=$id";
+    if($cid==0 && $catid==0)
+      {  $query="select * from store where seller_id=$id";
+        $res="All Colleges";
+        $res2="All Categories";
+        }
+    else if($cid!=0 && $catid!=0)
+        $query=$query." and college_id=$cid and category_id=$catid";
+    else if($cid!=0)
+       { $query=$query." and college_id=$cid";$res2="All Categories";}
+    else if($catid!=0)
+       { $query=$query." and category_id=$catid";$res="All Colleges";}
+    if(!mysqli_query($conn,$query))
+        print(mysqli_error($conn));
+}
+else if(isset($_SESSION["id"]) && !isset($_POST["cid"]))
+{
+    $id=$_SESSION["id"];
+    $query="select * from store where seller_id=$id";
+    $res="All Colleges";
+    $res2="All Categories";
+    if(!mysqli_query($conn,$query))
+        print(mysqli_error($conn));
+}
+else if(!isset($_SESSION["id"]) && isset($_POST["cid"]))
+{
+    $query="select * from store";
+    if($cid==0 && $catid==0)
+       { $query="select * from store";$res="All Colleges";$res2="All Categories";}
+    else if($cid!=0 && $catid!=0)
+        $query=$query." where college_id=$cid and category_id=$catid";
+    else if($cid!=0)
+       { $query=$query." where college_id=$cid";$res2="All Categories";}
+    else if($catid!=0)
+       { $query=$query." where category_id=$catid";$res="All Colleges";}
+    if(!mysqli_query($conn,$query))
+        print(mysqli_error($conn));
+}
+else if(!isset($_SESSION["id"]) && !isset($_POST["cid"]))
+{
+    $query="Select * from store";
+    $res="All Colleges";
+    $res2="All Categories";
+}
+if(isset($_POST["cid"]))
+{
+    if($_POST["cid"]!=0){
 $id=$_POST['cid'];
 $query2="Select college_name from colleges where college_id=$id";
 $r=mysqli_query($conn,$query2);
 $res=mysqli_fetch_assoc($r);
 $res=$res["college_name"];
-print("<h1>Showing Results for $res</h1>");
+}
+else $res="All Colleges";
+if($_POST["catid"]!=0){
+$query3="select category from categories where category_id=$catid";
+$r=mysqli_query($conn,$query3);
+$res2=mysqli_fetch_assoc($r);
+$res2=$res2["category"];}
+else $res2="All Categories";
+}
+print("<h4>Showing Results for $res and $res2</h4>");
 
     $result=mysqli_query($conn,$query);
     if(!$result)
@@ -69,8 +130,7 @@ else
 echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\"".$_GET["id"].">");
 ?>
 <select name='cid' id="s1">
-				<option value='0' disabled placeholder="College">College</option>
-<option value=1>All Colleges</option>
+<option value=0 selected>All Colleges</option>
 <option value=2>MNIT, JAIPUR</option>
 <option value=3>NIT JALANDHAR</option>
 <option value=4>IIT BOMBAY</option>
@@ -83,7 +143,7 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 <option value=11>IIT (BHU) VARANASI</option>
 			</select><br>
 <select name="catid" id="s2">
-        <option value="0" selected>All Categories</option>
+        <option value=0 selected>All Categories</option>
         <option value="1">Books</option>
         <option value="2">Clothing</option>
         <option value="3">Electronics</option>

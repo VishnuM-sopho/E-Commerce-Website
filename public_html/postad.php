@@ -1,4 +1,6 @@
-<?php require("../views/title.php"); ?>
+<?php 
+    require("../controllers/config.php"); 
+render("/null.php"); ?>
 <?php
 if(!isset($_GET["id"]))
     redirect("/login_form.php");

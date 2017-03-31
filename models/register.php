@@ -11,7 +11,7 @@
     }
     // else if user reached page via POST (as by submitting a form via POST)
      if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
+    {   
         //if text filed is empty
         if (empty($_POST["email"]))
         {
@@ -68,7 +68,8 @@
         $query="Select first_name from users where email='$email'";
         $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)!=0)
-            apologize("User already registered");
+            apologize("User already registered",1);
+        else{
         //query to insert the details of new user in users table
        $result="INSERT IGNORE INTO users (id,first_name,email,password,hash,college_id,gender) VALUES($id,'$name','$email','$pwd','$password','$cid','$gender')";
         mysqli_query($conn, $result);
@@ -76,7 +77,8 @@
             $result = mysqli_query($conn, $query);
             $rows=mysqli_fetch_assoc($result);
             $_SESSION["id"]=$rows["id"];
-            redirect("../public_html/portfolio.php");
+            redirect("../public_html/display.php?id=".$_SESSION["id"]."&change=0");
+            }
     }
 
 

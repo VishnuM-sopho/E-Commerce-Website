@@ -14,7 +14,7 @@
 }
 </style>
 <body>
-<div id="d1"><img id="i1" src="../public_html/images/logo.png"</div>
+<img id="i1" src="../public_html/images/logo.png">
 
 
 </body>
