@@ -46,36 +46,7 @@ nav {
 </body>
 </html>
 <?php
-print_r($_POST);
-if(isset($_POST["cid"]) && isset($_GET["id"]))
- {  
- echo("<a href=\"../public_html/store.php\">Return To Main Store</a>");
-    $id=$_SESSION["id"];
- extract($_POST);
-    if($cid!=1)
-    $query="select * from store where seller_id=$id and college_id=$cid";
-    else if($cid==1)
-        $query="select * from store where seller_id=$id";
-  }
-else if(isset($_GET["id"]) && !isset($_POST["cid"]))
-{
-    echo("<a href=\"../public_html/store.php\">Return To Main Store</a>");
-    $id=$_GET["id"];
- $query="select * from store where seller_id=$id";
-}
-else if(!isset($_GET["id"]) && isset($_POST["cid"]))
-{extract($_POST);
-    if($cid!=1)
-    $query="select * from store where college_id=$cid";
-    else if($cid==1)
-        $query="select * from store";
-}
-else
-$query="Select * from store";
-
-if(!isset($_POST["cid"]))
-    print("<h3>Showing Results for All</h3>");
-    else{
+print_r($_SESSION);
 $id=$_POST['cid'];
 $query2="Select college_name from colleges where college_id=$id";
 $r=mysqli_query($conn,$query2);
