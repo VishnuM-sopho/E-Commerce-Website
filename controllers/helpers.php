@@ -69,8 +69,8 @@
         {
             if(!empty($_SESSION["id"]))
             {
-                  $conn = mysqli_connect("localhost", "jharvard","crimson","olx");
-                  if (!$conn) {
+                  $conn = mysqli_connect("localhost", "vishnum1998","zrrJ8zNEdpuTwuty","olx");
+     if (!$conn) {
                   die("Connection failed: " . mysqli_connect_error());
 }
 

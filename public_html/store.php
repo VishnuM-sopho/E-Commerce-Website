@@ -53,7 +53,7 @@ $r=mysqli_query($conn,$query2);
 $res=mysqli_fetch_assoc($r);
 $res=$res["college_name"];
 print("<h1>Showing Results for $res</h1>");
-}
+
     $result=mysqli_query($conn,$query);
     if(!$result)
     print(mysqli_error($conn));
