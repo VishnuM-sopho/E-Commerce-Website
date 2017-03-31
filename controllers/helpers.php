@@ -5,8 +5,10 @@
     /**
      * Apologizes to user with message.
      */
-    function apologize($message)
+    function apologize($message,$value=0)
     {
+        if($value==1)
+            logout();
         render("apology.php", ["message" => $message]);
     }
 
