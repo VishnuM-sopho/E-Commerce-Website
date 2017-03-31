@@ -45,6 +45,8 @@
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
+     background-color: #fff;
+    background-color: rgba(255,255,255,0.8);
     margin: 50px auto;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
