@@ -62,7 +62,8 @@ li a:hover {
 
 <ul>
 	<li><a href="/public_html/login_form.php">Click to Sign In</a></li>
-	<li><a href="/public_html/store.php">Go to store</a></li>
+	<li><a href="/public_html/register_form.php">Register</a></a></li>
+ <li><a href="/public_html/store.php">Go to store</a></li>
 </ul>
 
      </div>
