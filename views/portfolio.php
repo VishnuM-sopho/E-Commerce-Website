@@ -12,24 +12,20 @@
     else
     {
     print("<h2>Your items on Sale</h2>");
-echo("<table id=\"store\">");
-echo("<tr>");
-echo("<th>Image</th>");
-echo("<th>Title</th>");
-echo("<th>Price</th>");
-echo("<th>College</th>");
-echo("<th>Category</th>");
-echo("<th>Date</th>");
-echo("</tr>");
+
 $id=$_SESSION["id"];
 $query="SELECT * from store where seller_id=$id";
 $result=mysqli_query($conn, $query);
+echo("<div id=\"main\"><section id=\"content\"><div id=\"left\"><ul>");
 while($rows=mysqli_fetch_assoc($result))
  {   
-	print("<tr>");
+	echo("<li>");
+	echo("<div class=\"img\">");
 	$image="<img src=\"".$rows["image"]."\">";
-    print("<td>".$image."</td>");
-    print("<td>" . $rows["title"] . "</td>");
+    echo($image."</div>");
+    echo("<div class=\"info\"><div align=\"center\">");
+    echo("<a class=\"title\" href=\"#\">");
+    echo($rows["title"]."</a></div>");
     $title=$rows["title"];
     $query="select college_id,category_id from store where title='$title' and seller_id=$id";
     $res=mysqli_query($conn,$query);
@@ -42,15 +38,17 @@ while($rows=mysqli_fetch_assoc($result))
     $query="select category from categories where category_id=$category_id";
     $res=mysqli_query($conn,$query);
     $rr=mysqli_fetch_assoc($res);
-    print("<td>" . $rows["price"] . "</td>");
-    print("<td>" . $r["college_name"] . "</td>");                                            
-    print("<td>" . $rr["category"] . "</td>");
-    print("<td>".$rows["date"]."</td>");
-    print("</tr>");
+    echo("<div class=\"price\">");
+    echo("<span class=\"st\">College:</span><strong> ".$r["college_name"] . "</strong><br>");                                           
+    echo("<span class=\"st\">Category:</span><strong> ".$rr["category"] . "</strong><br>");
+    echo("<span class=\"st\">Date of Posting:</span><strong> ".$rows["date"]."</strong><br>");
+    echo("<span class=\"st\">Price:</span><strong>Rs. ". $rows["price"] . "</strong><br>");
+    echo("</div>");
+    echo("</div></li>");
 }
 
+    echo("</ul></div></section></div>");
 
-echo("</table>");     
     }
-
+          require("footer.php");    
 ?>

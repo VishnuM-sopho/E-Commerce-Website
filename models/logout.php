@@ -9,5 +9,5 @@
 
     // redirect user
     redirect("../index.php");
-
+     require("views/footer.php");
 ?>

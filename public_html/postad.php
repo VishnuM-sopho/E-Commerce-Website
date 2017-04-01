@@ -237,7 +237,7 @@ select#soflow, select#soflow-color {
         
         
         
-        
+               <?php require("../views/footer.php");?>       
     </body>
 
 </html>

@@ -16,35 +16,26 @@ $result=mysqli_query($conn,$query);
     if(!$result)
     print(mysqli_error($conn));
 $rows=mysqli_fetch_assoc($result);
-echo("<table id=\"store\">");
-echo("<tr>");
-echo("<th>Image</th>");
-echo("<th>Title</th>");
-echo("<th>Description</th>");
-echo("<th>Price</th>");
-echo("<th>Date</th>");
-echo("<th>Contact</th>");
-echo("</tr>");
-$id=$rows["seller_id"];
-	print("<tr>");
+echo("<div id=\"main\"><section id=\"content\"><div id=\"left\"><ul>");
+echo("<li>");
+    $id=$rows["seller_id"];
+    echo("<div class=\"img\">");
 	$image="<img src=\"".$rows["image"]."\">";
-    print("<td>".$image."</td>");
-    print("<td>" . $rows["title"] . "</td>");
+    echo($image."</div>");
+    echo("<div class=\"info\"><div align=\"center\">");
+    echo("<a class=\"title\" href=\"#\">");
+    echo($rows["title"]."</a></div>");
     $query="select description,contact from item_desc where title='$title'";
     $res=mysqli_query($conn,$query);
     $row=mysqli_fetch_assoc($res);
     $desc=$row["description"];
     $contact=$row["contact"];
 
-
-
-
-
-
-    print("<td>" . $desc . "</td>");
-    print("<td>" . $rows["price"] . "</td>");                                            
-    print("<td>" . $rows["date"] . "</td>");
-    print("<td>".$contact."</td>");
-    print("</tr>");
-    echo("</table>");     
+    print("<p>" . $desc . "</p>");
+    echo("<div class=\"price\">");
+    echo("<span class=\"st\">Price:</span><strong>Rs. ". $rows["price"] . "</strong><br>");
+    echo("<span class=\"st\">Contact:</span><strong> ". $contact . "</strong><br>");                                           
+    echo("</div></li>");
+    echo("</ul></div></section></div>");     
+            require("../views/footer.php");  
 ?>

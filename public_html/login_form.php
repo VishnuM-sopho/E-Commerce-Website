@@ -177,6 +177,6 @@ table, th, td {
 	$("input[name=email]").focus();
 </script>
 
-         
+          <?php require("../views/footer.php");?>    
     </body>
 <script src='js/functions.js'></script></html>

@@ -193,7 +193,7 @@ table, th, td {
 <ul id="msg"></ul>
   </form>
 </div>
-     
+               <?php require("../views/footer.php");?>    
 </body>
 <script src='/js/functions.js'>
     

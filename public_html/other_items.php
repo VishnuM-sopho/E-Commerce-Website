@@ -156,27 +156,21 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 
 <?php
     if(count($rows)==0)
-        print("<h3>Nothing is present here for your Purchase from the Same Seller.Please comeback Later.</h3><br>");
+        print("<h3>Nothing is present here for your Purchase.Please comeback Later.</h3><br>");
     else
     {$l=mysqli_num_rows($res);
-    print("<h2>".$l." Items on Sale Available for You By the Same Seller</h2>");
-echo("<table id=\"store\">");
-echo("<tr>");
-echo("<th>Image</th>");
-echo("<th>Title</th>");
-echo("<th>Price</th>");
-echo("<th>College</th>");
-echo("<th>Category</th>");
-echo("<th>Date</th>");
-echo("<th>Contact Seller</th>");
-echo("</tr>");
+    print("<h2>".$l." Items on Sale Available for You</h2>");
+    echo("<div id=\"main\"><section id=\"content\"><div id=\"left\"><ul>");
 while($rows=mysqli_fetch_assoc($result))
  {   
     $id=$rows["seller_id"];
-	print("<tr>");
-	$image="<img src=\"".$rows["image"]."\">";
-    print("<td>".$image."</td>");
-    print("<td>" . $rows["title"] . "</td>");
+	echo("<li>");
+	echo("<div class=\"img\">");
+	$image="<img alt=\"\" src=\"".$rows["image"]."\">";
+    echo($image."</div>");
+    echo("<div class=\"info\"><div align=\"center\">");
+    echo("<a class=\"title\" href=\"#\">");
+    echo($rows["title"]."</a></div>");
     $title=$rows["title"];
     $query="select college_id,category_id from store where title='$title' and seller_id=$id";
     $res=mysqli_query($conn,$query);
@@ -189,18 +183,20 @@ while($rows=mysqli_fetch_assoc($result))
     $query="select category from categories where category_id=$category_id";
     $res=mysqli_query($conn,$query);
     $rr=mysqli_fetch_assoc($res);
-    print("<td>" . $rows["price"] . "</td>");
-    print("<td>" . $r["college_name"] . "</td>");                                            
-    print("<td>" . $rr["category"] . "</td>");
-    print("<td>".$rows["date"]."</td>");
-    print("<td><a href=\"/public_html/seller.php?id="."$id"."&title=".$rows["title"]."\">"."Contact Seller"."</a></td>");
-    print("</tr>");
+    echo("<div class=\"price\">");
+    echo("<span class=\"st\">College:</span><strong> ".$r["college_name"] . "</strong><br>");                                            
+    echo("<span class=\"st\">Category:</span><strong> ".$rr["category"] . "</strong><br>");
+    echo("<span class=\"st\">Date of Posting:</span><strong> ".$rows["date"]."</strong><br>");
+    echo("<span class=\"st\">Price:</span><strong>Rs. ". $rows["price"] . "</strong><br>");
+    echo("</div>");
+    echo("<div class=\"actions\">");
+    echo("<a href=\"/public_html/seller.php?id="."$id"."&title=".$rows["title"]."\">"."Contact Seller"."</a>");
+    echo("</div></div></li>");
 }
-
-echo("</table>");     
+        echo("</ul></div></section></div>");
     }
 
 
-
+        require("../views/footer.php");    
 
 ?>

@@ -210,3 +210,4 @@ input#passTwo
     </div>
 </div>
 </form>
+          <?php require("../views/footer.php");?>    

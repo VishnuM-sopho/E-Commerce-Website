@@ -67,5 +67,6 @@ li a:hover {
 </ul>
 
      </div>
+     <?php require("views/footer.php");?>
     </body>
 </html>
