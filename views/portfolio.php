@@ -1,4 +1,34 @@
+<style>
+.field {
+  display:flex;
+  position:realtive;
+  margin:5em auto;
+  width:80%;
+}
 
+.field>input[type=text],
+.field>button {
+  display:block;
+  font:1.2em Myriad Pro;
+}
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:0.2em ;
+}
+
+.field>button {
+  padding:0.6em 0.8em;
+  background-color:#2ecc71;
+  color:white;
+  border:none;
+}
+.field>button:hover {
+	cursor:pointer;
+}
+
+</style>
 <?php
     if($change)
         print("<h3>Your Password has been changed Successfully.</h3>");
@@ -12,6 +42,10 @@
     else
     {
     print("<h2>Your items on Sale</h2>");
+     print("<div class=\"field\" id=\"searchform\">
+		      <input type=\"text\" id=\"search\" placeholder=\"Search anything ?\" />
+		      <button type=\"button\" id=\"search\">Find</button>
+  	  </div>");
 
 $id=$_SESSION["id"];
 $query="SELECT * from store where seller_id=$id";
@@ -52,3 +86,16 @@ while($rows=mysqli_fetch_assoc($result))
     }
           require("footer.php");    
 ?>
+
+<script>
+$("#search").keyup(function () {
+    var filter = jQuery(this).val();
+    jQuery("section div ul li").each(function () {
+        if (jQuery(this).text().search(new RegExp(filter, "i")) < 0) {
+            jQuery(this).hide();
+        } else {
+            jQuery(this).show()
+        }
+    });
+});</script>   
+
