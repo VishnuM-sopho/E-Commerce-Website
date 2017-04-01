@@ -66,9 +66,16 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
             <div id="top">
                 <div>
                    
+                   <nav id="nav-1">
+                           <?php
+                           $rex="/.*other\_items\.php.*/";
+                           $rex2="/.*seller\.php.*/";
+                           if(preg_match($rex,$_SERVER['REQUEST_URI']) || preg_match($rex2,$_SERVER['REQUEST_URI']))
+               echo("<a class=\"link-1\" href=\"../public_html/store.php\">Go to Store</a>&nbsp;&nbsp;");
+                           ?>
+                   
                          <?php if (empty($_SESSION["id"])): ?>
-                           <nav id="nav-1">
-                                <a class="link-1" href="../public_html/login_form.php">Login</a>&nbsp;&nbsp;
+                            <a class="link-1" href="../public_html/login_form.php">Login</a>&nbsp;&nbsp;
                             <a class="link-1" href="../public_html/register_form.php">Register</a>&nbsp;&nbsp;
                             <a class="link-1" href="../models/login.php">Sell Item</a>&nbsp;&nbsp;
                             </nav>
@@ -100,9 +107,18 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                             ?>
 
                             <a class="link-1" href="../models/logout.php">Logout</a>
-                                                    </nav>
+                                                    
                         <?php endif ?>
-                    
+                    <?php
+
+                    $rex="/.*seller\.php.*/";
+                    if(preg_match($rex,$_SERVER['REQUEST_URI']))
+                      { echo("<nav id=\"nav-1\">");
+            echo("<a class=\"link-1\" href=\"../public_html/other_items.php?id=".$_GET["id"]."\">View Other Items from this Seller</a>&nbsp;&nbsp");
+                   echo("</nav>");}
+                   else
+                   echo("</nav>");
+                    ?>
                 </div>
                 
                 <?php if (!empty($_SESSION["id"])): ?>

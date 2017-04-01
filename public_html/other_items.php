@@ -48,12 +48,12 @@ nav {
 if(isset($_POST["cid"]))
     extract($_POST);
 
-if(isset($_SESSION["id"]) && isset($_POST["cid"]))
-{   
-    $id=$_SESSION["id"];
-    $query="select * from store where not seller_id=$id";
+if(isset($_GET["id"]) && isset($_POST["cid"]))
+{  
+    $id=$_GET["id"];
+    $query="select * from store where seller_id=$id";
     if($cid==0 && $catid==0)
-      {  $query="select * from store not where seller_id=$id";
+      {  $query="select * from store where seller_id=$id";
         $res="All Colleges";
         $res2="All Categories";
         }
@@ -66,16 +66,16 @@ if(isset($_SESSION["id"]) && isset($_POST["cid"]))
     if(!mysqli_query($conn,$query))
         print(mysqli_error($conn));
 }
-else if(isset($_SESSION["id"]) && !isset($_POST["cid"]))
+else if(isset($_GET["id"]) && !isset($_POST["cid"]))
 {
-    $id=$_SESSION["id"];
-    $query="select * from store where not seller_id=$id";
+    $id=$_GET["id"];
+    $query="select * from store where seller_id=$id";
     $res="All Colleges";
     $res2="All Categories";
     if(!mysqli_query($conn,$query))
         print(mysqli_error($conn));
 }
-else if(!isset($_SESSION["id"]) && isset($_POST["cid"]))
+else if(!isset($_GET["id"]) && isset($_POST["cid"]))
 {
     $query="select * from store";
     if($cid==0 && $catid==0)
@@ -89,7 +89,7 @@ else if(!isset($_SESSION["id"]) && isset($_POST["cid"]))
     if(!mysqli_query($conn,$query))
         print(mysqli_error($conn));
 }
-else if(!isset($_SESSION["id"]) && !isset($_POST["cid"]))
+else if(!isset($_GET["id"]) && !isset($_POST["cid"]))
 {
     $query="Select * from store";
     $res="All Colleges";
@@ -156,10 +156,10 @@ echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\
 
 <?php
     if(count($rows)==0)
-        print("<h3>Nothing is present here for your Purchase.Please comeback Later.</h3><br>");
+        print("<h3>Nothing is present here for your Purchase from the Same Seller.Please comeback Later.</h3><br>");
     else
     {$l=mysqli_num_rows($res);
-    print("<h2>".$l." Items on Sale Available for You</h2>");
+    print("<h2>".$l." Items on Sale Available for You By the Same Seller</h2>");
 echo("<table id=\"store\">");
 echo("<tr>");
 echo("<th>Image</th>");
