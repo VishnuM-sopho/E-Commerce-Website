@@ -1,6 +1,6 @@
 <?php require("../controllers/config.php"); ?>
 <?php
-require("../views/header.php");
+render("/null.php");
 $id=$_GET["id"];
 ?>
 <html>

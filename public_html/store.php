@@ -53,7 +53,7 @@ if(isset($_SESSION["id"]) && isset($_POST["cid"]))
     $id=$_SESSION["id"];
     $query="select * from store where not seller_id=$id";
     if($cid==0 && $catid==0)
-      {  $query="select * from store not where seller_id=$id";
+      {  $query="select * from store  where not seller_id=$id";
         $res="All Colleges";
         $res2="All Categories";
         }
