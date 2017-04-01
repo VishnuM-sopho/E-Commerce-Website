@@ -213,6 +213,7 @@ nav {
 
 /* footer section */
 footer {
+    
 background: none repeat scroll 0 0 ;
 border-top: 1px solid #E0E0E0;
 margin: 0 0 5px;
@@ -224,6 +225,7 @@ font-size: 30px;
 line-height: 30px;
 overflow: hidden;
 width: 100%;
+
 }
 footer a{
 color: white;
