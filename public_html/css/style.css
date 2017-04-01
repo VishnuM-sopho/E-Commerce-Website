@@ -254,16 +254,16 @@ text-decoration: bold;
 
 /* main section */
 #main {
-background-color: #fff;
-padding:20px 0;
+background-image: url("../public_html/images/CLs12lb.jpg");
+
+     background-size: auto;
+margin-left: 5px;
 }
 #content {
 overflow: hidden;
 }
 #content #left {
-border: 1px solid #E9E9E9;
 float: left;
-margin: 0 2%;
 width: 100%;
 }
 #content #right {
@@ -293,9 +293,11 @@ margin:0;
 padding:0;
 }
 #content #left ul li {
+border: 1px solid white;
 float:left;
 padding-bottom: 21px;
-width: 33%;
+margin: 5px 5px 5px 5px;
+width: 32%;
 }
 #content #left ul li:hover {
 background-color: #fbfbfb;
