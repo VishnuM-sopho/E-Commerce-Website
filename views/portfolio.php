@@ -32,6 +32,8 @@
 <?php
     if($change)
         print("<h3>Your Password has been changed Successfully.</h3>");
+    if(isset($sale) && $sale==1)
+        print("<h3>Ad Removed Successfully.</h3>");
     $query="Select * from store where seller_id = \"$id\" ";
     $result=mysqli_query($conn,$query);
     if(!$result)
@@ -79,7 +81,7 @@ while($rows=mysqli_fetch_assoc($result))
     echo("<span class=\"st\">Price:</span><strong>Rs. ". $rows["price"] . "</strong><br>");
     echo("</div>");
     echo("<div class=\"actions\">");
-    echo("<a href=\"/public_html/remove.php?id="."$id"."&title=".$rows["title"]."\">"."Remove Ad"."</a>");
+    echo("<a href=\"/models/remove.php?id="."$id"."&title=".$rows["title"]."\">"."Remove Ad"."</a>");
     echo("</div></div></li>");
 }
 

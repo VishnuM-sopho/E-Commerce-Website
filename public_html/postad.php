@@ -175,7 +175,7 @@ select#soflow, select#soflow-color {
     background-color: orange;
     width: 190px;
     font-weight: normal;
-    color: blue;
+    color: white;
     padding: 5px;
     border: 1px solid #aaa;
     border-radius: 5px;
@@ -215,8 +215,11 @@ select#soflow, select#soflow-color {
             <textarea type="text" name="contact" placeholder="Contact info (Min. length 4 char)"></textarea><br>
             <input type="text" name="price" placeholder="Your Price (In Rs.)"><br>
             <div class="fileUpload btn btn-primary">
-                <span>Upload</span>
-                <input type="file" class="upload" name="image" />
+                <span id="sp1">Upload</span>
+
+    <input type="file" class="upload" name="image"/>
+
+
             </div><br><br>
 
 

@@ -64,14 +64,13 @@
         
         $email=mysqli_real_escape_string($conn,$email);
         $password=mysqli_real_escape_string($conn,$password);
-        $id=mt_rand(10,100);
         $query="Select first_name from users where email='$email'";
         $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)!=0)
             apologize("User already registered",1);
         else{
         //query to insert the details of new user in users table
-       $result="INSERT IGNORE INTO users (id,first_name,email,password,hash,college_id,gender) VALUES($id,'$name','$email','$pwd','$password','$cid','$gender')";
+       $result="INSERT IGNORE INTO users (first_name,email,password,hash,college_id,gender) VALUES('$name','$email','$pwd','$password','$cid','$gender')";
         mysqli_query($conn, $result);
         $query = "SELECT id from users where email='$email'";
             $result = mysqli_query($conn, $query);
