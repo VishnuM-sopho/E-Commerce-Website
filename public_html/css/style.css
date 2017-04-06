@@ -256,8 +256,7 @@ text-decoration: bold;
 
 /* main section */
 #main {
-background-image: url("../public_html/images/CLs12lb.jpg");
-
+/*background-image: url("../public_html/images/CLs12lb.jpg");*/
      background-size: auto;
 margin-left: 5px;
 }
@@ -326,7 +325,8 @@ width: 175px;
 }
 #content #left ul li .img img {
 height:175px;
-width:250px;
+width:350px;
+margin-top: 10px;
 }
 #content #right ul li .img img {
 height:70px;
@@ -343,7 +343,7 @@ padding: 17px 0 0 21px;
 width: 164px;
 }
 #content #left ul li .info .title {
-color: #4B4B4B;
+color: black;
 display: inline-block;
 font-size: 25px;
 font-weight: bold;
@@ -400,8 +400,7 @@ text-decoration: none;
 overflow:hidden;
 }
 #content #left ul li .info .actions a {
-border: 1px solid #E0E0E0;
-color: #fd7a01;
+color: black;
 display: block;
 float:right;
 font-size: 25px;
@@ -411,7 +410,12 @@ padding: 5px;
 text-decoration: none;
 }
 #content #left ul li .info .actions a:first-child {
-color: #009832;
+color: black;
+float:left;
+}
+
+#content #left ul li .info .actions a:first-child:hover {
+color: black;
 float:left;
 }
 
