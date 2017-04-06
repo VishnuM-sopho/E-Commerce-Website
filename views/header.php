@@ -21,7 +21,7 @@ require("../views/title.php"); ?>
 
     </head>
 
-    <body>
+    
         
         <style>
          @import url(http://fonts.googleapis.com/css?family=Raleway);
@@ -61,6 +61,7 @@ h4 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size:20px; fo
 
 p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
         </style>
+        <body>
        <div class="container">
 
             <div id="top">
@@ -127,4 +128,4 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                 
             </div>
 
-            <div id="middle">
+

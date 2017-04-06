@@ -20,7 +20,7 @@ button {
 }
 #container
 {
-  position:absolute;
+  position:relative;
   background:#fff;
   height:380px;
   width:350px;
@@ -52,7 +52,7 @@ button {
   -webkit-border-radius: 15px 15px 0px 0px;
   -moz-border-radius: 15px 15px 0px 0px;
 }
-#footer.incorrect
+#foot.incorrect
 {
   background-color:#5175C0;
   font-family: 'Francois One', sans-serif;
@@ -67,7 +67,7 @@ button {
   -webkit-border-radius: 0px 0px 15px 15px;
   -moz-border-radius: 0px 0px 15px 15px;
 }
-#footer.correct
+#foot.correct
 {
   background-color:#84F075;
   font-family: 'Francois One', sans-serif;
@@ -145,29 +145,29 @@ input#passTwo
   var passOne = $("#passOne").val();
   var passTwo = $("#passTwo").val();
   
-  $("#footerText").html("Fields don't match");
+  $("#footText").html("Fields don't match");
   
   var checkAndChange = function()
   {
     if(passOne.length < 1){
-      if($("#footer").hasClass("correct")){
-        $("#footer").removeClass("correct").addClass("incorrect");
-        $("#footerText").html("They don't match");
+      if($("#foot").hasClass("correct")){
+        $("#foot").removeClass("correct").addClass("incorrect");
+        $("#footText").html("They don't match");
       }else{
-        $("#footerText").html("They don't match");
+        $("#footText").html("They don't match");
       }
     }
-    else if($("#footer").hasClass("incorrect"))
+    else if($("#foot").hasClass("incorrect"))
     {
       if(passOne == passTwo){
-        $("#footer").removeClass("incorrect").addClass("correct");
-        $("#footerText").html("Continue");
+        $("#foot").removeClass("incorrect").addClass("correct");
+        $("#footText").html("Continue");
       }
     }
     else
     {
       if(passOne != passTwo){
-        $("#footer").removeClass("correct").addClass("incorrect");
+        $("#foot").removeClass("correct").addClass("incorrect");
         $("#footerText").html("They don't match");
       } 
     }   
@@ -201,13 +201,13 @@ input#passTwo
             <input class="form-control" name="confirm_password" placeholder="Confirm New Password" type="password"  id="passTwo"/>
              </div>
   <div >
-    <button id="footer" class="incorrect" type="submit">
+    <button id="foot" class="incorrect" type="submit">
               
-              <center><h1 id="footerText">  Change Password</h1></center>
+              <center><h1 id="footText">  Change Password</h1></center>
             </button>
     
     
     </div>
 </div>
-</form>
+</form></div>
           <?php require("../views/footer.php");?>    

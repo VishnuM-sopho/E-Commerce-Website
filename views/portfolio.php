@@ -78,7 +78,9 @@ while($rows=mysqli_fetch_assoc($result))
     echo("<span class=\"st\">Date of Posting:</span><strong> ".$rows["date"]."</strong><br>");
     echo("<span class=\"st\">Price:</span><strong>Rs. ". $rows["price"] . "</strong><br>");
     echo("</div>");
-    echo("</div></li>");
+    echo("<div class=\"actions\">");
+    echo("<a href=\"/public_html/remove.php?id="."$id"."&title=".$rows["title"]."\">"."Remove Ad"."</a>");
+    echo("</div></div></li>");
 }
 
     echo("</ul></div></section></div>");
