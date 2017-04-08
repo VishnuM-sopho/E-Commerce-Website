@@ -8,9 +8,15 @@
     </head>
     
 <style>
-    body {
-    background-image: url("../public_html/images/CLs12lb.jpg");
-     background-size: auto;
+    
+body {
+    background-image: url("../public_html/images/4.jpg");
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100%;
+     
+  z-index: -1; 
 }
 </style>
 <body>
