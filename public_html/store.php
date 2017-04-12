@@ -85,6 +85,11 @@ $("#search").keyup(function () {
 </html>
 <?php
 $query="Select * from store";
+if(isset($_SESSION["id"]))
+{
+    $id=$_SESSION["id"];
+    $query=$query." where not seller_id=$id";
+}
     $res="All Colleges";
     $res2="All Categories";
     $result=mysqli_query($conn,$query);

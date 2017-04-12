@@ -17,6 +17,7 @@
     width: 80px;
     display: inline !important;
 }
+
 .upload-div { 
     background-color: orange;
     width: 190px;
@@ -88,7 +89,7 @@
     overflow: hidden;
 }
 .form-style-8 input[type="button"], 
-.form-style-8 button[type="submit"]{
+.form-style-8 button[type="submit"],a.button{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -104,12 +105,14 @@
     text-transform: uppercase;
 }
 .form-style-8 input[type="button"]:hover, 
-.form-style-8 button[type="submit"]:hover {
+.form-style-8 button[type="submit"]:hover,a.button {
     background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
     background-color:#34CACA;
 }
 
-
+a.button{
+    margin-left:50px;
+}
 
 
 
@@ -172,6 +175,7 @@ table, th, td {
 </form>
 <button form="LoginF" type="submit" name="submit">Log In</button>
 <span>or <a href="register_form.php">Register</a></span>
+<a href="../public_html/store.php" class="button">Go to Store</a>
 </div>
 <script type='text/javascript'>
 	$("input[name=email]").focus();

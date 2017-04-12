@@ -57,7 +57,7 @@ nav {
 }
 
 h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 80px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
-h4 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; opacity : 0.85;}
+h4 { color: black; font-family: 'Helvetica Neue', sans-serif; font-size:20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; opacity : 0.85;}
 
 p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
         </style>
@@ -79,6 +79,11 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                             <a class="link-1" href="../public_html/login_form.php">Login</a>&nbsp;&nbsp;
                             <a class="link-1" href="../public_html/register_form.php">Register</a>&nbsp;&nbsp;
                             <a class="link-1" href="../models/login.php">Sell Item</a>&nbsp;&nbsp;
+                          <?php
+                          $rex="/.*store.php.*/";
+                          if(!preg_match($rex,$_SERVER['REQUEST_URI']))
+        {   echo("<a class=\"link-1\" href=\"../public_html/store.php");echo("\">Store</a>&nbsp;&nbsp");  }      
+                          ?>
                             
                         <?php endif ?>
                         
