@@ -214,13 +214,13 @@ nav {
 /* footer section */
 footer {
     
-background: none repeat scroll 0 0 ;
-border-top: 1px solid #E0E0E0;
+
+border-top: 20px solid black;
 margin: 0 0 5px;
 padding: 15px 0 15px 20px;
 }
 footer #privacy {
-color: white;
+color: black;
 font-size: 30px;
 line-height: 30px;
 overflow: hidden;
@@ -228,7 +228,7 @@ width: 100%;
 
 }
 footer a{
-color: white;
+color: black;
 text-decoration: bold;
 }
 

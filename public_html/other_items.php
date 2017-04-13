@@ -72,17 +72,7 @@ nav {
      
 </body>
        
-  <script>
-$("#search").keyup(function () {
-    var filter = jQuery(this).val();
-    jQuery("section div ul li").each(function () {
-        if (jQuery(this).text().search(new RegExp(filter, "i")) < 0) {
-            jQuery(this).hide();
-        } else {
-            jQuery(this).show()
-        }
-    });
-});</script> 
+ 
 </html>
 <?php
 $query="Select * from store";
@@ -95,12 +85,6 @@ $query="Select * from store";
     $rows=mysqli_fetch_assoc($res);
  
     
-?>
-<?php
- if(!isset($_GET["id"]))
-echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php\">");
-else
-echo("<form id=\"search\" method=\"POST\" action=\"../public_html/store.php?id=\"".$_GET["id"].">");
 ?>
 
 <?php
@@ -153,3 +137,18 @@ while($rows=mysqli_fetch_assoc($result))
         require("../views/footer.php");    
 
 ?>
+
+<html>
+    
+     <script>
+$("#search").keyup(function () {
+    var filter = jQuery(this).val();
+    jQuery("section div ul li").each(function () {
+        if (jQuery(this).text().search(new RegExp(filter, "i")) < 0) {
+            jQuery(this).hide();
+        } else {
+            jQuery(this).show()
+        }
+    });
+});</script> 
+</html>

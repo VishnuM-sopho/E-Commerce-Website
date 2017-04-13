@@ -24,6 +24,30 @@ require("../views/title.php"); ?>
     
         
         <style>
+        
+/* footer section */
+footer {
+    
+background: none repeat scroll 0 0 ;
+border-top: 1px solid black;
+margin: 0 0 0px;
+
+}
+footer #privacy1 {
+color: black;
+font-size: 30px;
+line-height: 30px;
+overflow: hidden;
+width: 100%;
+
+}
+footer a{
+color: black;
+text-decoration: bold;
+}
+
+/*footer end*/
+
          @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 nav {
