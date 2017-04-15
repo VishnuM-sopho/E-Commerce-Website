@@ -95,7 +95,8 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                            <?php
                            $rex="/.*other\_items\.php.*/";
                            $rex2="/.*seller\.php.*/";
-                           if(preg_match($rex,$_SERVER['REQUEST_URI']) || preg_match($rex2,$_SERVER['REQUEST_URI']))
+                           $rex3="/.*store.php.*/";
+                           if(preg_match($rex,$_SERVER['REQUEST_URI']) || preg_match($rex2,$_SERVER['REQUEST_URI']) || !preg_match($rex,$_SERVER['REQUEST_URI']) )
                echo("<a class=\"link-1\" href=\"../public_html/store.php\">Go to Store</a>&nbsp;&nbsp;");
                            ?>
                    
@@ -103,11 +104,7 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
                             <a class="link-1" href="../public_html/login_form.php">Login</a>&nbsp;&nbsp;
                             <a class="link-1" href="../public_html/register_form.php">Register</a>&nbsp;&nbsp;
                             <a class="link-1" href="../models/login.php">Sell Item</a>&nbsp;&nbsp;
-                          <?php
-                          $rex="/.*store.php.*/";
-                          if(!preg_match($rex,$_SERVER['REQUEST_URI']))
-        {   echo("<a class=\"link-1\" href=\"../public_html/store.php");echo("\">Store</a>&nbsp;&nbsp");  }      
-                          ?>
+                          
                             
                         <?php endif ?>
                         
@@ -144,7 +141,7 @@ p{ color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; lin
 
                     $rex="/.*seller\.php.*/";
                     if(preg_match($rex,$_SERVER['REQUEST_URI']))
-            echo("<a class=\"link-1\" href=\"../public_html/other_items.php?id=".$_GET["id"]."\">View Other Items from this Seller</a>&nbsp;&nbsp");
+            echo("<a class=\"link-1\" href=\"../public_html/other_items.php?id=".$_GET["id"]."&title=".$_GET["title"]."\">View Other Items from this Seller</a>&nbsp;&nbsp");
                    else
                    echo("</nav>");
                     ?>

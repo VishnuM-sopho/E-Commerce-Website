@@ -75,7 +75,9 @@ nav {
  
 </html>
 <?php
-$query="Select * from store";
+$id=$_GET["id"];
+$title=$_GET["title"];
+$query="Select * from store where seller_id=$id and not title='$title'";
     $res="All Colleges";
     $res2="All Categories";
     $result=mysqli_query($conn,$query);
