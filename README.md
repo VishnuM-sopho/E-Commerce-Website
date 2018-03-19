@@ -1,2 +1,1 @@
-Project 2
-its about creating e-commerce kind of website for students .
+E-Commerce website for students from various institutes to sell & buy products .
